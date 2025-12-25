@@ -1,0 +1,56 @@
+CSS CUSTOM PROPERTIES at :root level:
+- Eco-friedly color palette:
+ - --primary: #10b981, --secondary: #059669, --accent: #34d399
+ - --danger: #ef4444, --warning: #f59e0b, --info: #3b82f6
+ - --text: #1f2937, --text-ligh: #6b7280, --bg: #f3f4f6, --White: #ffffff
+- Spacing salce: --spacing-xs throught --spacing-xl (0.5rem to 3rem)
+- --radius: 0.5rem, --radius-lg: 1rem
+- --shadow-sm, --shadow-md, --shadow-lg
+
+BASE STYLES:
+- Universal selector reset (margin, padding, box-sizing: border-box)
+- Body with gradiente background: linear-gradiente(135deg, #d4fc79 0%, #96e6a1 100%)
+- Body min-height: 100vh, font-family: system fonts
+- Container class: max-widht 1200px, centered with margin auto, padding
+
+UTILITY CLASSES:
+- .hidden {display: none !importante;}
+- .section-title: large heading style
+
+HEADER:
+- White background, shadow, padding
+- Title with primary color, 2rem font size
+- Subtitle in gray, smaller font
+
+FORM STYLING (.calculator class):
+- White card background, rounded corners, shadow, padding
+- Form groups with margin-buttom
+- Labels: bold, display block, margin-buttom
+- Text/number inputs: full width, padding, border with focus state (primary color border and shadow)
+- Helper text: small, gray, below inputs
+
+TRANSPORT MODE GRID:
+- Container: display grid, 4 columns on desktop (2 on mobile), gap
+- Hide actual radio inputs with: position absolute, opacity 0
+- Style the label as clickable card:
+ -- Border, padding, rounded corners, cursor pointer, text-align center
+ -- Display flex column for icon (3rem emoji) and label text
+ -- Hover: lift with transform translateY(-2px) and shadow
+ -- When input checked: primary border (2px), ligh primary background
+ -- Use adjacente sibling selector: input:checked + .card-class
+
+CHECKBOX:
+- Standard checkbox with label, margin top
+
+BUTTON:
+- Full width, primary background, white text, padding, rounded
+- Hover: secondary color, lift effect
+- Disabled: gray background, not-allowed cursor
+
+Add .spinner class for loading animation:
+- Inline-block, 40px circle, border with rotating top color
+- @keyframes sping animation
+
+RESPONSIVE:
+- Use min-width: 768px media query for desktop adjustments
+- Transport grid: 4 columns on desktop, 2 on mobile (max-width: 767px)

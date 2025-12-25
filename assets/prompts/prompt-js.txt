@@ -1,0 +1,29 @@
+Create js/routes-data.js with a global object named RoutesDB containing:
+
+A property 'routes' as an array of route objects with structure:
+- origin: string (city name with state, e.g., "São Paulo, SP")
+- destination: string (city, name with state)
+- distanceKm: number (actual distance between cities)
+
+Include 30-40 popular Brazilian routes:
+- Capital to capital connections (São Paulo-Rio de Janeiro: 430km, São Paulo-Brasília: 1016km, Rio-Brasília: 1148km, etc)
+- Major regional routes (São Paulo-Campinas: 95km, Rio-Niterói:13km, Belo Horizonte-Ouro Preto: 100km, etc)
+- Cover different regions of Brazil
+
+Add these methouds to RoutesDB object:
+
+getAllCities function() {
+ // Return unique sorted array of all city names from routes
+ // Extract from both origin and destination
+ // Remove duplicates and sorte alphabetically
+}
+
+findDistance: function(origin, destination) {
+ // Find route distance between two cities
+ // Search in both directions (origin-destination and destination-origin)
+ // Normalize input: trim whitespace and convert to lowercase for comparion
+ // Return distance in km if found, num if not found
+}
+
+The entire fill should define one global variable: RoutesDB
+Add comments explaing the structure

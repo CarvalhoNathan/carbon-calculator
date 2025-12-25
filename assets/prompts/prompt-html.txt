@@ -1,0 +1,34 @@
+Create a semantic HTML5 structure for a CO2 emissions calculator:
+
+HEADER:
+- Title with leaf emoji "🍃 Calculora de Emissão de CO2"
+- Subtitle explaining the purpose
+
+MAIN FORM (id="calculator-form"):
+- Origin input (id="origin") with datalist (id="cities-list") for autocomplete
+- Destination input (id="destination") sharing the same datalist
+- Distance input (id="distance", type="number", readonly that will be auto-filled)
+- Checkbox (id="manual-distance") labeled "Inserir distância manualmente"
+- Transport mode selector with 4 radio buttons in a visual grid:
+  -- bicycle. car (checked), bus, truck
+  -- Each wrapped in label with emoji icon and text in Portuguese
+  -- Use name="transport" and values: bicycle, car, bus, truck
+- Submit button with text "Calcular Emissão"
+
+FOOTER:
+- Credits text: "Projeto GitHub Copilot"
+
+AT THE END OF BODY (in this order):
+- Script tags loading JavaScript files in order:
+  <script src="js/routes-data.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/calculator.js></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+REQUIREMENTS:
+- Use BEM naming convention for classes
+- Include meta viewport for responsive design
+- Link to css/style.css in head
+- The datalist should be empty initialy (will be populated by JavaScript)
+- Add helper text below distance input: "A distância será preenchida automaticamente"

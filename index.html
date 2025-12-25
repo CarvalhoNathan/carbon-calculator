@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>🍃 Calculora de Emissão de CO2</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="description" content="Calculadora simples de emissões de CO2 para viagens entre cidades.">
+</head>
+<body class="calc">
+	<header class="calc__header">
+		<h1 class="calc__header-title">🍃 Calculora de Emissão de CO2</h1>
+		<p class="calc__header-subtitle">Calcule as emissões estimadas de CO2 para uma viagem entre duas cidades.</p>
+	</header>
+
+	<main class="calc__main">
+		<form id="calculator-form" class="calc__form" novalidate>
+			<div class="calc__field">
+				<label for="origin" class="calc__label">Origem</label>
+				<input id="origin" class="calc__input" name="origin" list="cities-list" inputmode="text" autocomplete="off" aria-describedby="origin-help" placeholder="Digite a cidade de origem">
+			</div>
+
+			<div class="calc__field">
+				<label for="destination" class="calc__label">Destino</label>
+				<input id="destination" class="calc__input" name="destination" list="cities-list" inputmode="text" autocomplete="off" aria-describedby="destination-help" placeholder="Digite a cidade de destino">
+			</div>
+
+			<datalist id="cities-list">
+				<!-- Será preenchido por JavaScript -->
+			</datalist>
+
+			<div class="calc__field">
+				<label for="distance" class="calc__label">Distância (km)</label>
+				<input id="distance" class="calc__input calc__input--number" name="distance" type="number" readonly aria-describedby="distance-help" placeholder="0">
+				<small id="distance-help" class="calc__hint">A distância será preenchida automaticamente</small>
+			</div>
+
+			<div class="calc__field calc__field--checkbox">
+				<input id="manual-distance" class="calc__checkbox" type="checkbox" name="manual-distance">
+				<label for="manual-distance" class="calc__label">Inserir distância manualmente</label>
+			</div>
+
+			<fieldset class="calc__controls" aria-label="Modo de transporte">
+				<legend class="calc__controls-legend">Modo de transporte</legend>
+				<div class="calc__transport-grid">
+					<label class="calc__transport-item">
+						<input type="radio" name="transport" value="bicycle" class="calc__radio">
+						<span class="calc__transport-emoji">🚲</span>
+						<span class="calc__transport-label">Bicicleta</span>
+					</label>
+
+					<label class="calc__transport-item">
+						<input type="radio" name="transport" value="car" class="calc__radio" checked>
+						<span class="calc__transport-emoji">🚗</span>
+						<span class="calc__transport-label">Carro</span>
+					</label>
+
+					<label class="calc__transport-item">
+						<input type="radio" name="transport" value="bus" class="calc__radio">
+						<span class="calc__transport-emoji">🚌</span>
+						<span class="calc__transport-label">Ônibus</span>
+					</label>
+
+					<label class="calc__transport-item">
+						<input type="radio" name="transport" value="truck" class="calc__radio">
+						<span class="calc__transport-emoji">🚚</span>
+						<span class="calc__transport-label">Caminhão</span>
+					</label>
+				</div>
+			</fieldset>
+
+			<div class="calc__actions">
+				<button type="submit" class="calc__button">Calcular Emissão</button>
+			</div>
+		</form>
+
+		<!-- Results sections: hidden by default and shown after calculation -->
+		<section id="results" class="results hidden">
+			<h2 class="section-title">Resultados</h2>
+			<div id="results-content" class="results__grid"></div>
+		</section>
+
+		<section id="comparison" class="comparison hidden">
+			<h2 class="section-title">Comparação entre modos</h2>
+			<div id="comparison-content" class="comparison__list"></div>
+		</section>
+
+		<section id="carbon-credits" class="carbon hidden">
+			<h2 class="section-title">Créditos de Carbono</h2>
+			<div id="carbon-credits-content" class="carbon__grid"></div>
+		</section>
+	</main>
+
+	<footer class="calc__footer">
+		<p class="calc__credits">Projeto GitHub Copilot</p>
+	</footer>
+
+	<script src="js/routes-data.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/calculator.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

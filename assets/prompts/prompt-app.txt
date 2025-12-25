@@ -1,0 +1,47 @@
+Create js/app.js with initialization and event handling:
+
+Create an immediately invoked function expression (IIFE) or use DOMContentLoaded event:
+
+INITIALIZATION (when DOM is ready):
+1. Call CONFIG.populatedDatalist() to fill city autocomplete
+2. Call CONFIG.setupDistanceAutoFill() to enable auto-distance feature
+3. Get from elemento by id 'calculator-form'
+4. Add submit event listener to form
+5. Log to console "✅ Calculadora inicializada!"
+
+FROM SUBMIT HANDLER:
+When form submits:
+1. Prevent default from submission (e.preventDefault())
+2. Get all form values:
+   - origin value (trim whitespace)
+   - distance value (parse as float)
+   - transport mode (get checked radio button value)
+3. Validate inputs:
+   - Check if origin, destination, distance are filled
+   - Check if distance is greater than 0
+   - If validation fails: show alert with error message and return
+4. Get submit button elemento
+5. Call UI.showLoading(button) to show loading state
+6. Hide previous results sections using UI.hideElement()
+7. Use setTimeout with 1500ms delay to simulate processing: Inside timeout:
+   - Try-catch block for handling: 
+     - Calculate emission for selected mode using Calculator
+     - Calculate car emission as baseline
+     - Calculate savings compared to car
+     - Calculate all modes comparison
+     - Calculate carbono credits and price estimate
+     - Build data objetcs for rendering
+     - Call UI.renderResults() and set innerHTML of results-content
+     - Call UI.renderComparion() and set innerHTML of comparison-content
+     - Call UI.renderCarbonCredits() and set innerHTML of carbon-credits-content
+     - Show all three sections using UI.showElement()
+     - Scroll to results section using UI.scrollToElement()
+     - Call UI.hideLoading(button)
+   - Catch any erros:
+     - Log error to console
+     - Show user-friendly alert
+     - Call UI.hideLoading(button)
+
+Add comments explaining each step
+Use descriptive variable names
+Keep code clean and readble
