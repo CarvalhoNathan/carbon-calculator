@@ -1,0 +1,54 @@
+Add to css/style.css styles for dynamically generated content:
+
+RESULTS SECTION:
+- .results, .comparison, .carbon-credits: White card, padding, margin-bottom, rounded, shadow
+- .results__card: individual card styling
+  - Background White, padding 1.5rem, border-radius, subtitle shadow
+  - Margin-bottom for spacing
+  - Display flex with align-items center
+- .results__icon: emoji/icon size 2.5rem, margin-right 1rem
+- .results__data: flex column
+- .results__label: small text (0.875rem), gray color, text-transform upperscale, letter-spacing
+- .results__value: large bold text (1.5rem), dark color
+- .results__savings: special highlight with border-left (accent color 4px), background light, padding, display flex
+- icon on left, text content on right
+
+COMPARISON SECTION:
+- .comparison__item: card with padding 1rem, margin-bottom 1rem, border 2px solid gray-light, rounded, transition
+- .comparison__item--selected: border-color primary, background light primary (rgba)
+- .comparison__mode: display flex, align-items center, gap 0.5rem
+- .comparison__icon: font-size 1.5rem
+- .comparison__label: font-weight bold
+- .comparison__badge: small badge (12px height), background primary, color White, padding 0.25rem 0.5rem, rounded-full, font-size 0.75rem
+- .comparison__stats: text align-right
+- .comparison__emission: font-weight bold, font-size 1.125rem
+- .comparison__percentage: font-size 0.875rem, color gray
+- .comparison__bar-container: width 100%, height 12px, background gray-ligth, border-radius, overflow hidden
+- .comparison__bar: height 100%, border-radius, transition width 0.5s ease
+- .comparison__tip: info box with light blue background, border-left info color, padding, margin-top, display flex, gap
+
+CARBON CREDITS SECTION:
+- .carbon-credits__grid: display grid, 2 columns on desktop (1 on mobile), gap 1.5rem, margin-bottom 1.5rem
+- .carbon-credits__card: background White, padding 1.5rem, border-radius, box-shadow
+- .carbon-credits__label: small gray text, margin-bottom
+- .carbon-credits__value: very large text (2.5rem), font-weight bold, color primary
+- .carbon-credits__hint: tiny text (0.75rem), color gray, margin-top
+- .carbon-credits__info: border 2px dashed info color, background light blue, padding 1rem, border-radius, margin-bottom
+  - Strong tag, font-weight bold, color info
+  - Paragraph: line-height 1.6
+- .carbon-credits__btn: full widht button, primary background, white text, padding 1rem, rounded, font-weight bold, cursor pointer, border none
+  - Hover: secondary color, transform translateY(-2px), shadow
+
+ANIMATIONS:
+- Add @keyframes fadeIn animation for sections appearing:
+  - from { oppacity: 0; transform: translateY(20px); }
+  - to { oppacity: 1; transform: translateY(0); }
+- Apply fadeIn to results sections: animation fadeIn 0.5s ease-out
+
+RESPONSIVE:
+- On mobile (max-width: 767px):
+  - .carbon-credits__grid: 1 column
+  - .results__value: smaller font size
+  - Adjust padding and spacing
+
+Make everything visually polished and professional
